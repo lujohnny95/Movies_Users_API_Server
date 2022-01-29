@@ -7,7 +7,7 @@ userRouter.post("/user", hashPassword, addUser);
 userRouter.post("/user/login", decryptPassword, logIn);
 userRouter.get("/user/:username", listUser);
 userRouter.put("/user", updateUser);
-updateUser.delete("/user/:username", deleteUser);
+userRouter.delete("/user/:username", deleteUser);
 userRouter.get("/user", tokenCheck);
 
 module.exports = userRouter;

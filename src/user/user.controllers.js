@@ -27,8 +27,9 @@ exports.updateUser = async (req, res) => {
         const updatedUser = await User.updateOne(
             { username: req.body.username },
             { $set: { email: req.body.email } },
-            { new: true }
+            { new: true },
         );
+        res.status(200).send({ message: "Success", updatedUser });
     } catch (error) {
         console.log(error);
         res.status(500).send({ message: "Check server logs" });
